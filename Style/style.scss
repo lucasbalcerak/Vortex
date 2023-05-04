@@ -1,0 +1,43 @@
+@mixin devices ($breakpoint) {
+    @if $breakpoint == desktop {
+        @media only screen and (max-width: 1000px) {
+            @content;
+        }
+    }
+
+    @if breakpoint == mobile {
+        @media only screen and (max-width: 481px) {
+            @content;
+        }
+    }
+}
+
+// VARIABLES
+
+$fontFamily: 'Montserrat', sans-serif;
+$containerWidth: 1400px;
+$containerWidthMini: 1000px;
+$containerWidthMiniX2: 600px;
+// colors
+$colorMain: #3EB489;
+
+// GLOBAL
+
+*{
+    box-sizing: border-box;
+    font-family: $fontFamily;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: $containerWidth;
+}
+
+.container-mini {
+    max-width: $containerWidthMini;
+}
+
+.container-mini-x2 {
+    max-width: $containerWidthMiniX2;
+}
