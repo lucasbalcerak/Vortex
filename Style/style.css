@@ -3,6 +3,11 @@
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  color: #E5E5CB;
+}
+
+body {
+  background-color: #222831;
 }
 
 .container {
@@ -15,4 +20,160 @@
 
 .container-mini-x2 {
   max-width: 600px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+header {
+  margin: 0 auto;
+  background-color: #222831;
+  color: #EEEEEE;
+}
+header div {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+header div h1 {
+  width: 50%;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 3px solid #3EB489;
+  text-shadow: 2px 2px black;
+}
+@media only screen and (max-width: 481px) {
+  header div h1 {
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  header div h1 {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 481px) {
+  header div .btn {
+    position: relative;
+    height: 40px;
+    transition-duration: 0.5s;
+  }
+  header div .btn .icon {
+    transition-duration: 0.5s;
+    position: relative;
+    height: 4px;
+    width: 30px;
+    top: 18px;
+    background-color: #3EB489;
+  }
+  header div .btn .icon::before {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #3EB489;
+    content: "";
+    top: -12px;
+  }
+  header div .btn .icon::after {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #3EB489;
+    content: "";
+    top: 12px;
+  }
+  header div .btn.open .icon {
+    background: transparent;
+  }
+  header div .btn.open .icon:before {
+    transform: rotateZ(45deg) scaleX(1.25) translate(8px, 8px);
+  }
+  header div .btn.open .icon:after {
+    transform: rotateZ(-45deg) scaleX(1.25) translate(7px, -7px);
+  }
+  header div .btn:hover {
+    cursor: pointer;
+  }
+}
+header div nav {
+  width: 50%;
+}
+@media only screen and (max-width: 1000px) {
+  header div nav {
+    width: 80%;
+  }
+}
+header div ul {
+  justify-content: space-between;
+}
+@media only screen and (max-width: 481px) {
+  header div ul {
+    height: 0px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 1s;
+  }
+}
+header div ul li {
+  display: inline-block;
+  line-height: 70px;
+}
+header div ul li:first-child {
+  padding-left: 50px;
+}
+@media only screen and (max-width: 481px) {
+  header div ul li:first-child {
+    padding-left: 0;
+  }
+}
+header div ul li:last-child {
+  padding-right: 50px;
+}
+@media only screen and (max-width: 481px) {
+  header div ul li:last-child {
+    padding-right: 0;
+  }
+}
+@media only screen and (max-width: 481px) {
+  header div ul li {
+    width: 100%;
+    line-height: 50px;
+  }
+}
+header div ul li a {
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+header div ul li a:hover {
+  background: linear-gradient(to right, #3EB489 2px, transparent 4px) 0 0, linear-gradient(to right, #3EB489 2px, transparent 4px) 0 100%, linear-gradient(to left, #3EB489 2px, transparent 4px) 100% 0, linear-gradient(to left, #3EB489 2px, transparent 4px) 100% 100%, linear-gradient(to bottom, #3EB489 2px, transparent 4px) 0 0, linear-gradient(to bottom, #3EB489 2px, transparent 4px) 100% 0, linear-gradient(to top, #3EB489 2px, transparent 4px) 0 100%, linear-gradient(to top, #3EB489 2px, transparent 4px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+@media only screen and (max-width: 481px) {
+  header div ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to right, #3EB489 2px, transparent 4px) 0 0, linear-gradient(to right, #3EB489 2px, transparent 4px) 0 100%, linear-gradient(to left, #3EB489 2px, transparent 4px) 100% 0, linear-gradient(to left, #3EB489 2px, transparent 4px) 100% 100%, linear-gradient(to bottom, #3EB489 2px, transparent 4px) 0 0, linear-gradient(to bottom, #3EB489 2px, transparent 4px) 100% 0, linear-gradient(to top, #3EB489 2px, transparent 4px) 0 100%, linear-gradient(to top, #3EB489 2px, transparent 4px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  header div ul li a {
+    background: linear-gradient(to right, #3EB489 2px, transparent 4px) 0 0, linear-gradient(to right, #3EB489 2px, transparent 4px) 0 100%, linear-gradient(to left, #3EB489 2px, transparent 4px) 100% 0, linear-gradient(to left, #3EB489 2px, transparent 4px) 100% 100%, linear-gradient(to bottom, #3EB489 2px, transparent 4px) 0 0, linear-gradient(to bottom, #3EB489 2px, transparent 4px) 100% 0, linear-gradient(to top, #3EB489 2px, transparent 4px) 0 100%, linear-gradient(to top, #3EB489 2px, transparent 4px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

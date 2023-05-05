@@ -5,7 +5,7 @@
         }
     }
 
-    @if breakpoint == mobile {
+    @if $breakpoint == mobile {
         @media only screen and (max-width: 481px) {
             @content;
         }
@@ -28,6 +28,11 @@ $colorMain: #3EB489;
     font-family: $fontFamily;
     margin: 0;
     padding: 0;
+    color: #E5E5CB;;
+}
+
+body { 
+    background-color: #222831;
 }
 
 .container {
@@ -40,4 +45,205 @@ $colorMain: #3EB489;
 
 .container-mini-x2 {
     max-width: $containerWidthMiniX2;
+}
+
+// FLEX
+
+.flex-container {
+    display: flex;
+}
+
+// Header
+
+header {
+    margin: 0 auto;
+    background-color: #222831;
+    color: #EEEEEE;
+
+    div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        h1 {
+            width: 50%;
+            line-height: 70px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 3px solid $colorMain;
+            text-shadow: 2px 2px black;
+
+            @include devices(mobile) {
+                line-height: 50px;
+            }
+
+            @include devices(desktop) {
+                width: 80%;
+            }
+        }
+
+        .btn {
+
+            @include devices(mobile) {
+                position: relative;
+                height: 40px;
+                transition-duration: 0.5s;
+
+    
+                .icon {
+                    transition-duration: 0.5s;
+                    position: relative;
+                    height: 4px;
+                    width: 30px;
+                    top: 18px;
+                    background-color: $colorMain;
+    
+                    &::before {
+                        transition-duration: 0.5s;
+                        position: absolute;
+                        width: 30px;
+                        height: 4px;
+                        background-color: $colorMain;
+                        content: "";
+                        top: -12px;
+                    }
+    
+                    &::after {
+                        transition-duration: 0.5s;
+                        position: absolute;
+                        width: 30px;
+                        height: 4px;
+                        background-color: $colorMain;
+                        content: "";
+                        top: 12px;
+                    }
+                }
+    
+                &.open {
+                    .icon {
+                      background: transparent;
+                      
+                      &:before{
+                        transform: rotateZ(45deg) scaleX(1.25) translate(8px, 8px);
+                      }
+                
+                      &:after{
+                        transform: rotateZ(-45deg) scaleX(1.25) translate(7px, -7px);
+                      }
+                    }
+                  }
+    
+                &:hover {
+                    cursor: pointer;
+                }   
+            }
+        }
+
+        nav {
+            width: 50%;
+
+            @include devices(desktop) {
+                width: 80%;
+            }
+        }
+
+        ul {
+            justify-content: space-between;
+
+            @include devices(mobile) {
+                height: 0px;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                transition: 1s;
+            }
+
+
+            li {
+                display: inline-block;
+                line-height: 70px;
+
+                &:first-child {
+                    padding-left: 50px;
+
+                    @include devices(mobile){
+                        padding-left: 0;
+                    }
+                }
+
+                &:last-child {
+                    padding-right: 50px;
+
+                    @include devices(mobile) {
+                        padding-right: 0;
+                    }
+                }
+
+                @include devices(mobile) {
+                    width: 100%;
+                    line-height: 50px;
+                }
+
+                a {
+                    padding: 15px 30px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                            background:
+                                linear-gradient(to right, $colorMain 2px, transparent 4px) 0 0,
+                                linear-gradient(to right, $colorMain 2px, transparent 4px) 0 100%,
+                                linear-gradient(to left, $colorMain 2px, transparent 4px) 100% 0,
+                                linear-gradient(to left, $colorMain 2px, transparent 4px) 100% 100%,
+                                linear-gradient(to bottom, $colorMain 2px, transparent 4px) 0 0,
+                                linear-gradient(to bottom, $colorMain 2px, transparent 4px) 100% 0,
+                                linear-gradient(to top, $colorMain 2px, transparent 4px) 0 100%,
+                                linear-gradient(to top, $colorMain 2px, transparent 4px) 100% 100%;
+                    
+                            background-repeat: no-repeat;
+                            background-size: 20px 20px;
+                    }
+
+                    @include devices(mobile) {
+                        display: inline-block;
+                        width: 100%;
+                        padding: 0;
+                        text-align: center;
+
+                        background:
+                                linear-gradient(to right, $colorMain 2px, transparent 4px) 0 0,
+                                linear-gradient(to right, $colorMain 2px, transparent 4px) 0 100%,
+                                linear-gradient(to left, $colorMain 2px, transparent 4px) 100% 0,
+                                linear-gradient(to left, $colorMain 2px, transparent 4px) 100% 100%,
+                                linear-gradient(to bottom, $colorMain 2px, transparent 4px) 0 0,
+                                linear-gradient(to bottom, $colorMain 2px, transparent 4px) 100% 0,
+                                linear-gradient(to top, $colorMain 2px, transparent 4px) 0 100%,
+                                linear-gradient(to top, $colorMain 2px, transparent 4px) 100% 100%;
+                    
+                        background-repeat: no-repeat;
+                        background-size: 20px 20px;
+                    }
+
+                    @include devices(desktop) {
+                        background:
+                                linear-gradient(to right, $colorMain 2px, transparent 4px) 0 0,
+                                linear-gradient(to right, $colorMain 2px, transparent 4px) 0 100%,
+                                linear-gradient(to left, $colorMain 2px, transparent 4px) 100% 0,
+                                linear-gradient(to left, $colorMain 2px, transparent 4px) 100% 100%,
+                                linear-gradient(to bottom, $colorMain 2px, transparent 4px) 0 0,
+                                linear-gradient(to bottom, $colorMain 2px, transparent 4px) 100% 0,
+                                linear-gradient(to top, $colorMain 2px, transparent 4px) 0 100%,
+                                linear-gradient(to top, $colorMain 2px, transparent 4px) 100% 100%;
+                    
+                        background-repeat: no-repeat;
+                        background-size: 20px 20px;
+                    }
+                }
+            }
+        }
+    }
 }
