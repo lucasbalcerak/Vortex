@@ -31,3 +31,39 @@ $(document).ready(function () {
 
     }, 6000)
 });
+
+let map;
+initMap();
+
+// async function initMap() {
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: 52.60589064161958, lng:  21.11600586137695 },
+//     zoom: 15
+//     ,
+//   });
+  
+// }
+
+async function initMap() {
+    // The location of Uluru
+    const position = { lat: 52.60589064161958, lng: 21.11600586137695 };
+    // Request needed libraries.
+    //@ts-ignore
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  
+    // The map, centered at Uluru
+    map = new Map(document.getElementById("map"), {
+      zoom: 14,
+      center: position,
+      mapId: "Vortex",
+    });
+  
+    // The marker, positioned at Uluru
+    const marker = new AdvancedMarkerElement({
+      map: map,
+      position: position,
+      title: "Vortex Sp Z.o.o",
+    });
+  }
+  

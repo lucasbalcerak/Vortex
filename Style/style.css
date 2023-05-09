@@ -372,4 +372,39 @@ main {
     width: 100%;
     border-width: 4px;
   }
+}
+
+#contact {
+  gap: 50px;
+  align-items: center;
+}
+@media only screen and (max-width: 481px) {
+  #contact {
+    flex-direction: column;
+  }
+}
+#contact article {
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  box-shadow: 2px 2px 15px rgba(62, 180, 137, 0.5);
+}
+#contact article div {
+  font-size: 1.5rem;
+}
+#contact article div i {
+  color: #3EB489;
+}
+#contact article div p {
+  display: inline;
+  margin-left: 10px;
+}
+#contact #map {
+  width: 400px;
+  height: 400px;
+}
+@media only screen and (max-width: 481px) {
+  #contact #map {
+    width: 90%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -463,3 +463,44 @@ main {
         }
     }
 }
+
+// Contact
+
+#contact {
+
+    gap: 50px;
+    align-items:  center;
+
+    @include devices(mobile){
+        flex-direction: column;
+    }
+
+    article {
+        flex-direction: column;
+        gap: 15px;
+        padding: 30px;
+        box-shadow: 2px 2px 15px rgba(62, 180, 137, 0.5);
+
+        div {
+            font-size: 1.5rem;
+
+            i {
+                color: #3EB489;
+            }
+
+            p {
+                display: inline;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    #map {
+        width: 400px;
+        height: 400px;
+
+        @include devices(mobile) {
+            width: 90%;
+        }
+    }
+}
