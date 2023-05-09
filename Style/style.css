@@ -377,6 +377,7 @@ main {
 #contact {
   gap: 50px;
   align-items: center;
+  margin-bottom: 100px;
 }
 @media only screen and (max-width: 481px) {
   #contact {
@@ -391,6 +392,9 @@ main {
 }
 #contact article div {
   font-size: 1.5rem;
+}
+#contact article div a {
+  text-decoration: none;
 }
 #contact article div i {
   color: #3EB489;
